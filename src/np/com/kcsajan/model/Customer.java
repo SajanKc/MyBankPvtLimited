@@ -145,6 +145,39 @@ public class Customer {
 		}
 	}
 
+	public static void WithdrawFromAtm(Connection con, Integer cardNumber, Integer balance) {
+		Integer totalAmount, accountNumber;
+
+		try {
+			String query = "SELECT balance, account_number  FROM customer JOIN card ON customer.customer_id = card.customer_id AND card_number = ?";
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, cardNumber);
+			ResultSet result = stmt.executeQuery();
+			if (result.next()) {
+				totalAmount = Integer.parseInt(result.getString("balance"));
+				accountNumber = Integer.parseInt(result.getString("account_number"));
+
+				if (totalAmount < balance) {
+					JOptionPane.showMessageDialog(null, "You don't have sufficient balance !!!",
+							"MyBank Pvt. Limited - Error", JOptionPane.PLAIN_MESSAGE);
+				} else {
+					Integer remainingBalance = totalAmount - balance;
+					String updateQuery = "UPDATE customer SET balance = ? WHERE account_number = ?";
+					PreparedStatement balanceStatement = con.prepareStatement(updateQuery);
+					balanceStatement.setInt(1, remainingBalance);
+					balanceStatement.setInt(2, accountNumber);
+
+					balanceStatement.executeUpdate();
+
+					JOptionPane.showMessageDialog(null, "Collect your money !!!\nRs. " + balance,
+							"MyBank Pvt. Limited - Success", JOptionPane.PLAIN_MESSAGE);
+				}
+			}
+		} catch (Exception error) {
+			error.printStackTrace();
+		}
+	}
+
 	public static void UpdateCustomer(Connection con, Integer accNumber, String fullName) {
 		try {
 			String updateQuery = "UPDATE customer SET full_name = ? WHERE account_number = ?";

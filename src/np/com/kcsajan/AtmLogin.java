@@ -19,15 +19,15 @@ import javax.swing.JTextField;
 
 import np.com.kcsajan.helper.ConnectionProvider;
 
-public class Login implements ActionListener {
+public class AtmLogin implements ActionListener {
 
 	private JFrame frame;
-	private JTextField textUserName;
+	private JTextField textCardNumber;
 	private JPasswordField passwordPIN;
 	private JButton btnLogin;
 
-	public Login() {
-		frame = new JFrame("***MyBank Pvt. Limited ### Login***");
+	public AtmLogin() {
+		frame = new JFrame("***MyBank Pvt. Limited ### ATM Login***");
 		frame.setVisible(true);
 		frame.getContentPane().setLayout(null);
 		frame.setSize(600, 500);
@@ -41,15 +41,15 @@ public class Login implements ActionListener {
 		bankName.setBounds(80, 50, 450, 80);
 		frame.getContentPane().add(bankName);
 
-		JLabel lbUserName = new JLabel("UserName :");
-		lbUserName.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lbUserName.setBounds(96, 170, 138, 25);
-		frame.getContentPane().add(lbUserName);
+		JLabel lbCardNumber = new JLabel("Card Number :");
+		lbCardNumber.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lbCardNumber.setBounds(96, 170, 138, 25);
+		frame.getContentPane().add(lbCardNumber);
 
-		textUserName = new JTextField();
-		textUserName.setBounds(333, 171, 150, 25);
-		frame.getContentPane().add(textUserName);
-		textUserName.setColumns(10);
+		textCardNumber = new JTextField();
+		textCardNumber.setBounds(333, 171, 150, 25);
+		frame.getContentPane().add(textCardNumber);
+		textCardNumber.setColumns(10);
 
 		JLabel lbPIN = new JLabel("PIN :");
 		lbPIN.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -81,22 +81,22 @@ public class Login implements ActionListener {
 		Object obj = e.getSource();
 		if (obj == btnLogin) {
 			Connection con = ConnectionProvider.getCon();
-			String userName = textUserName.getText();
+			String cardNumber = textCardNumber.getText();
 			char[] pin = passwordPIN.getPassword();
 			String tPin = String.valueOf(pin);
 
 			try {
-				String query = "SELECT * FROM teller WHERE user_name = ? && pin = ?";
+				String query = "SELECT * FROM card WHERE card_number = ? && pin = ?";
 				PreparedStatement stmt = con.prepareStatement(query);
-				stmt.setString(1, userName);
+				stmt.setString(1, cardNumber);
 				stmt.setString(2, tPin);
 				ResultSet result = stmt.executeQuery();
 
 				if (result.next()) {
 					frame.setVisible(false);
-					new MyBank();
+					new Atm(Integer.parseInt(cardNumber));
 				} else {
-					JOptionPane.showMessageDialog(null, "UserName or Password Incorrect !!!",
+					JOptionPane.showMessageDialog(null, "Card Number or PIN Incorrect !!!",
 							"MyBank Pvt. Limited - Error", JOptionPane.PLAIN_MESSAGE);
 				}
 			} catch (Exception error) {
