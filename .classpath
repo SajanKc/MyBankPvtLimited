@@ -7,5 +7,40 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="E:/Aadim National College/3Third Semester/JAVA/mysql-connector-java-8.0.22/mysql-connector-java-8.0.22.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/barcodes-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/barcodes-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/barcodes-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/font-asian-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/forms-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/forms-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/forms-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/hyph-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/io-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/io-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/io-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/kernel-7.1.17.jar" sourcepath="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/kernel-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/kernel-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/kernel-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/layout-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/layout-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/layout-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdfa-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdfa-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdfa-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdftest-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdftest-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/pdftest-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/sign-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/sign-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/sign-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/styled-xml-parser-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/styled-xml-parser-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/styled-xml-parser-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/svg-7.1.17.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/svg-7.1.17-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/iText7-Core-7.1.17/svg-7.1.17-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/log4j-1.2.16.jar/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/slf4j.api-1.6.1.jar/slf4j.api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/Aadim National College/6Sixth Semester/Advanced Java/slf4j-log4j12-1.6.1.jar/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

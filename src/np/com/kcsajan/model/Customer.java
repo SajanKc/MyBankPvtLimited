@@ -1,11 +1,15 @@
 package np.com.kcsajan.model;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
+
+import np.com.kcsajan.helper.WithdrawReceipt;
 
 public class Customer {
 
@@ -147,13 +151,15 @@ public class Customer {
 
 	public static void WithdrawFromAtm(Connection con, Integer cardNumber, Integer balance) {
 		Integer totalAmount, accountNumber;
+		String fullName;
 
 		try {
-			String query = "SELECT balance, account_number  FROM customer JOIN card ON customer.customer_id = card.customer_id AND card_number = ?";
+			String query = "SELECT full_name, balance, account_number  FROM customer JOIN card ON customer.customer_id = card.customer_id AND card_number = ?";
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setInt(1, cardNumber);
 			ResultSet result = stmt.executeQuery();
 			if (result.next()) {
+				fullName = result.getString("full_name");
 				totalAmount = Integer.parseInt(result.getString("balance"));
 				accountNumber = Integer.parseInt(result.getString("account_number"));
 
@@ -169,8 +175,28 @@ public class Customer {
 
 					balanceStatement.executeUpdate();
 
-					JOptionPane.showMessageDialog(null, "Collect your money !!!\nRs. " + balance,
+					String fileName = "E:\\Aadim National College\\6Sixth Semester\\Advanced Java\\Swing\\WithdrawReceipt\\"
+							+ fullName + " " + new Date(System.nanoTime()) + ".pdf";
+					File file = new File(fileName);
+					file.createNewFile();
+					WithdrawReceipt wr = new WithdrawReceipt();
+					wr.createPdf(file, fullName, accountNumber, balance, remainingBalance);
+
+					JOptionPane.showMessageDialog(null, "Collect your money & Receipt!!!\nRs. " + balance,
 							"MyBank Pvt. Limited - Success", JOptionPane.PLAIN_MESSAGE);
+
+					try {
+						if (!Desktop.isDesktopSupported()) {
+							JOptionPane.showMessageDialog(null, "Cannot Open PDF", "MyBank Pvt. Limited - Error",
+									JOptionPane.PLAIN_MESSAGE);
+							return;
+						}
+						Desktop desktop = Desktop.getDesktop();
+						if (file.exists())
+							desktop.open(file);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		} catch (Exception error) {
